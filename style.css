@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+#content {
+    text-align: center;
+}
+
+#header {
+    padding: 4rem;
+    border-bottom: 2px solid black;
+    font-size: 5rem;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+}
+
+#player-score,
+#computer-score {
+    padding: 2rem;
+}
+
+#buttons {
+    padding: 2rem;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+}
