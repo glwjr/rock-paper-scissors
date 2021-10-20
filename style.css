@@ -45,4 +45,6 @@ button {
     border: 1px solid black;
     border-radius: 5px;
     padding: 1rem;
+    font-size: 10rem;
+    margin: 0 1rem;
 }
