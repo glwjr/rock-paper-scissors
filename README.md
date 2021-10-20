@@ -1,1 +1,1 @@
-# rock-paper-scissors
+Rock Paper Scissors game created using JavaScript. Following the curriculum of The Odin Project.
