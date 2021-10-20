@@ -12,16 +12,6 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-    if (computerScore == 5) {
-        gameStatus.innerHTML = "Game over! Computer wins. Refresh to play again."
-        return
-    }
-
-    if (playerScore == 5) {
-        gameStatus.innerHTML = "You win the game! Refresh to play again."
-        return
-    }
-
     if (playerSelection == computerSelection) {
         gameStatus.innerHTML = "It's a draw!"
     }
@@ -30,14 +20,26 @@ function playRound(playerSelection, computerSelection) {
             (playerSelection == "Scissors" && computerSelection == "Rock")) {
             
             computerScore++
-            gameStatus.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}.`
+
+            if(computerScore == 5) {
+                gameStatus.innerHTML = "Computer wins the game! Refresh to play again."
+                disableButtons();
+            } else {
+                gameStatus.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}.`
+            }
     }
     else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
             (playerSelection == "Paper" && computerSelection == "Rock") || 
             (playerSelection == "Scissors" && computerSelection == "Paper")) {
             
             playerScore++
-            gameStatus.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
+
+            if(playerScore == 5) {
+                gameStatus.innerHTML = "You win the game! Refresh to play again."
+                disableButtons();
+            } else {
+                gameStatus.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
+            }
     }
 
     playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
@@ -64,3 +66,9 @@ let scissorsButton = document.getElementById("scissors-button");
 scissorsButton.addEventListener('click', () => playRound("Scissors", computerPlay()))
 
 let gameStatus = document.getElementById("game-status");
+
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+}
