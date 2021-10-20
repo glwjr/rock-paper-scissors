@@ -32,18 +32,3 @@ function playRound(playerSelection, computerSelection) {
             playerScore++
     }
 }
-
-function game() {
-    for (let i = 0; i < 50; i++) {
-        if (computerScore == 5) {
-            console.log("Game over! Computer wins. Refresh to play again.")
-            return
-        }
-        if (playerScore == 5) {
-            console.log("Game over! Player wins. Refresh to play again.")
-            return
-        }
-        
-        playRound();
-    }
-}
