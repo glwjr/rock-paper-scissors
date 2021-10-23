@@ -73,14 +73,25 @@ function disableButtons() {
     scissorsButton.disabled = true;
 }
 
+//function displayPlayerChoice(sign) {
+//    if(sign == "Rock") {
+//        return `<i class="far fa-hand-rock"></i>`
+//    }
+//    if(sign == "Paper") {
+//        return `<i class="far fa-hand-paper"></i>`
+//    }
+//    if(sign == "Scissors") {
+//        return `<i class="far fa-hand-scissors"></i>`
+//    }
+//}
+
 function displayPlayerChoice(sign) {
-    if(sign == "Rock") {
-        return `<i class="far fa-hand-rock"></i>`
-    }
-    if(sign == "Paper") {
-        return `<i class="far fa-hand-paper"></i>`
-    }
-    if(sign == "Scissors") {
-        return `<i class="far fa-hand-scissors"></i>`
+    switch (sign) {
+        case "Rock":
+            return `<i class="far fa-hand-rock"></i>`
+        case "Paper":
+            return `<i class="far fa-hand-paper"></i>`
+        case "Scissors":
+            return `<i class="far fa-hand-scissors"></i>`
     }
 }
