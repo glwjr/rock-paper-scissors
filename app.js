@@ -70,11 +70,11 @@ let gameStatus = document.getElementById("game-status");
 function displayPlayerChoice(sign) {
     switch (sign) {
         case "Rock":
-            return `<i class="far fa-hand-rock"></i>`
+            return `<i class="fas fa-hand-rock"></i>`
         case "Paper":
-            return `<i class="far fa-hand-paper"></i>`
+            return `<i class="fas fa-hand-paper"></i>`
         case "Scissors":
-            return `<i class="far fa-hand-scissors"></i>`
+            return `<i class="fas fa-hand-scissors"></i>`
     }
 }
 
