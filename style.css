@@ -32,19 +32,31 @@ body {
 
 #player-score,
 #computer-score {
-    padding: 2rem;
+    padding: 2rem 2rem .5rem 2rem;
+    width: 15rem;
+}
+
+#player-choice,
+#computer-choice {
+  height: 5rem;
+  width: 5rem;
+  margin: auto;
+  line-height: 5rem;
+  font-size: 3rem;
 }
 
 #buttons {
-    padding: 2rem;
+  display: inline-block;
 }
 
-button {
-    cursor: pointer;
-    background: none;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 1rem;
-    font-size: 10rem;
-    margin: 0 1rem;
+#rock-button,
+#paper-button,
+#scissors-button {
+  cursor: pointer;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 10rem;
+  margin: 1rem;
 }

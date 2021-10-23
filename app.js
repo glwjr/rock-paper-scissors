@@ -43,10 +43,10 @@ function playRound(playerSelection, computerSelection) {
     }
 
     playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
-    playerChoiceDisplay.innerHTML = playerSelection
+    playerChoiceDisplay.innerHTML = displayPlayerChoice(playerSelection)
 
     computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
-    computerChoiceDisplay.innerHTML = computerSelection
+    computerChoiceDisplay.innerHTML = displayPlayerChoice(computerSelection)
 }
 
 // UI
@@ -71,4 +71,16 @@ function disableButtons() {
     rockButton.disabled = true;
     paperButton.disabled = true;
     scissorsButton.disabled = true;
+}
+
+function displayPlayerChoice(sign) {
+    if(sign == "Rock") {
+        return `<i class="far fa-hand-rock"></i>`
+    }
+    if(sign == "Paper") {
+        return `<i class="far fa-hand-paper"></i>`
+    }
+    if(sign == "Scissors") {
+        return `<i class="far fa-hand-scissors"></i>`
+    }
 }
