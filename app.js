@@ -67,24 +67,6 @@ scissorsButton.addEventListener('click', () => playRound("Scissors", computerPla
 
 let gameStatus = document.getElementById("game-status");
 
-function disableButtons() {
-    rockButton.disabled = true;
-    paperButton.disabled = true;
-    scissorsButton.disabled = true;
-}
-
-//function displayPlayerChoice(sign) {
-//    if(sign == "Rock") {
-//        return `<i class="far fa-hand-rock"></i>`
-//    }
-//    if(sign == "Paper") {
-//        return `<i class="far fa-hand-paper"></i>`
-//    }
-//    if(sign == "Scissors") {
-//        return `<i class="far fa-hand-scissors"></i>`
-//    }
-//}
-
 function displayPlayerChoice(sign) {
     switch (sign) {
         case "Rock":
@@ -94,4 +76,10 @@ function displayPlayerChoice(sign) {
         case "Scissors":
             return `<i class="far fa-hand-scissors"></i>`
     }
+}
+
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
 }
