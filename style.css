@@ -81,6 +81,14 @@ body {
   transform: translateY(3px);
 }
 
+#rock-button:disabled,
+#paper-button:disabled,
+#scissors-button:disabled {
+  color: #a8dadc;
+  border-color: #a8dadc;
+  transform: translateY(0);
+}
+
 #game-status {
   margin: 2rem auto;
   height: 10rem;
