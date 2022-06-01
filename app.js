@@ -22,8 +22,9 @@ function playRound(playerSelection, computerSelection) {
             computerScore++
 
             if(computerScore == 5) {
-                gameStatus.innerHTML = "Computer wins the game! Refresh to play again."
+                gameStatus.innerHTML = "Computer wins the game! Click the reset button to play again."
                 disableButtons();
+                showResetButton();
             } else {
                 gameStatus.innerHTML = `You lose! ${computerSelection} beats ${playerSelection}.`
             }
@@ -35,8 +36,9 @@ function playRound(playerSelection, computerSelection) {
             playerScore++
 
             if(playerScore == 5) {
-                gameStatus.innerHTML = "You win the game! Refresh to play again."
+                gameStatus.innerHTML = "You win the game! Click the reset button to play again."
                 disableButtons();
+                showResetButton();
             } else {
                 gameStatus.innerHTML = `You win! ${playerSelection} beats ${computerSelection}.`
             }
@@ -67,6 +69,9 @@ scissorsButton.addEventListener('click', () => playRound("Scissors", computerPla
 
 let gameStatus = document.getElementById("game-status");
 
+let resetButton = document.getElementById("reset-button");
+resetButton.addEventListener('click', () => resetGame())
+
 function displayPlayerChoice(sign) {
     switch (sign) {
         case "Rock":
@@ -82,4 +87,40 @@ function disableButtons() {
     rockButton.disabled = true;
     paperButton.disabled = true;
     scissorsButton.disabled = true;
+}
+
+function enableButtons() {
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+}
+
+function resetScore() {
+    computerScore = 0;
+    playerScore = 0;
+}
+
+function showResetButton() {
+    resetButton.style.display = "inline";
+}
+
+function hideResetButton() {
+    resetButton.style.display = "none";
+}
+
+function resetDisplay() {
+    playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
+    playerChoiceDisplay.innerHTML = ""
+
+    computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+    computerChoiceDisplay.innerHTML = ""
+
+    gameStatus.innerHTML = "Click a button to start the game"
+}
+
+function resetGame() {
+    resetScore();
+    resetDisplay();
+    hideResetButton();
+    enableButtons();
 }
